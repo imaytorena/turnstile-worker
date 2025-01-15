@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "deploy": "wrangler publish worker.js",
+    "dev": "wrangler dev worker.js --local"
+  },
+  "devDependencies": {
+    "wrangler": "^3.102.0"
+  }
+}
