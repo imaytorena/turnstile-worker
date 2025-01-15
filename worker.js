@@ -16,6 +16,8 @@ export default {
                 status: 405,
             });
         }
+        const data = await request.formData();
+
         const token = request.headers.get('CF-TURNSTILE-TOKEN');
         const ip = request.headers.get('CF-Connecting-IP');
 
@@ -38,6 +40,6 @@ export default {
         // The Turnstile token was successfuly validated. Proceed with your application logic.
         // Validate login, redirect user, etc.
         // For this demo, we just echo the "/siteverify" response:
-        return new Response(JSON.stringify({...outcome, message: 'Turnstile token successfuly validated.'}), {status: 200});
+        return new Response(JSON.stringify({...outcome, data, message: 'Turnstile token successfuly validated.'}), {status: 200});
     },
 };
